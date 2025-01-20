@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+
+	<style>
+		body {
+			margin: 0;
+			font-family: Arial, sans-serif;
+			font-weight: 900;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 20px;
+		}
+
+		.row {
+			display: flex;
+			gap: 10px;
+			align-items: center;
+		}
+
+		.label {
+			font-size: 1.5rem;
+		}
+
+		button {
+			width: 200px;
+			height: 200px;
+			font-size: 7rem;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.btn-red {
+			background: #ff0000;
+		}
+
+		.btn-red:active {
+			background: #bb0000;
+		}
+
+		.btn-green {
+			background: #00ff00;
+		}
+
+		.btn-green:active {
+			background: #00bb00;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- Max Distance Change -->
+		<div class="row">
+			<span class="label">Max Distance Change</span>
+		</div>
+		<div class="row">
+			<span class="value" id="max-value">Current: </span>
+		</div>
+		<div class="row">
+			<button class="btn-green" aria-label="increase max distance" onclick="handleClick('right', true)">
+				+
+			</button>
+			<button class="btn-red" aria-label="decrease max distance" onclick="handleClick('right', false)">
+				-
+			</button>
+		</div>
+
+		<!-- Min Distance Change -->
+		<div class="row">
+			<span class="label">Min Distance Change</span>
+		</div>
+		<div class="row">
+			<span class="value" id="min-value">Current: </span>
+		</div>
+		<div class="row">
+			<button class="btn-green" aria-label="increase min distance" onclick="handleClick('left', true)">
+				+
+			</button>
+			<button class="btn-red" aria-label="decrease min distance" onclick="handleClick('left', false)">
+				-
+			</button>
+		</div>
+	</div>
+</body>
+</html>
