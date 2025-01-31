@@ -4,9 +4,13 @@
 #include <sstream>
 
 
-std::string hp::readFileContents(std::string_view fileName) {
+std::string hp::readContents(std::istream& is) {
 	std::stringstream buffer;
-	std::ifstream fin(fileName.data());
-	buffer << fin.rdbuf();
+	buffer << is.rdbuf();
 	return buffer.str();
+}
+
+std::string hp::readContents(std::string_view fileName) {
+	std::ifstream fin(fileName.data());
+	return readContents(fin);
 }

@@ -9,10 +9,11 @@ namespace hp
 	{
 		enum class TokenType : uint16_t {
 			Unknown,
-			TagOpen,
+			TagStartOpen,
+			TagEndOpen,
 			TagClose,
-			EqualSign,
 			TagName,
+			EqualSign,
 			AttributeName,
 			AttributeValue,
 			Text,
@@ -23,6 +24,10 @@ namespace hp
 		struct Token {
 			TokenType type;
 			std::string value;
+
+			bool operator==(const Token& other) const {
+				return type == other.type && value == other.value;
+			}
 		};
 
 		struct TokenRegex {

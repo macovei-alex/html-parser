@@ -2,11 +2,11 @@
 
 #include <string>
 #include <string_view>
+#include <fstream>
 
 
 namespace hp
 {
-
-	std::string readFileContents(std::string_view fileName);
-
+	std::string readContents(std::istream& is);
+	std::string readContents(std::string_view fileName);
 }

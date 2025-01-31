@@ -1,0 +1,255 @@
+(TagName -> "!DOCTYPE")
+(AttributeName -> "html")
+(TagClose -> ">")
+(TagName -> "html")
+(AttributeName -> "lang")
+(EqualSign -> "=")
+(AttributeValue -> ""en"")
+(TagClose -> ">")
+(TagName -> "head")
+(TagClose -> ">")
+(TagName -> "meta")
+(AttributeName -> "charset")
+(EqualSign -> "=")
+(AttributeValue -> ""UTF-8"")
+(TagClose -> "/>")
+(TagName -> "meta")
+(AttributeName -> "name")
+(EqualSign -> "=")
+(AttributeValue -> ""viewport"")
+(AttributeName -> "content")
+(EqualSign -> "=")
+(AttributeValue -> ""width=device-width, initial-scale=1.0"")
+(TagClose -> "/>")
+(TagName -> "title")
+(TagClose -> ">")
+(Text -> "Document")
+(TagEndOpen -> "</")
+(TagName -> "title")
+(TagClose -> ">")
+(TagName -> "style")
+(TagClose -> ">")
+(Text -> "body {
+			margin: 0;
+			font-family: Arial, sans-serif;
+			font-weight: 900;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 20px;
+		}
+
+		.row {
+			display: flex;
+			gap: 10px;
+			align-items: center;
+		}
+
+		.label {
+			font-size: 1.5rem;
+		}
+
+		button {
+			width: 200px;
+			height: 200px;
+			font-size: 7rem;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.btn-red {
+			background: #ff0000;
+		}
+
+		.btn-red:active {
+			background: #bb0000;
+		}
+
+		.btn-green {
+			background: #00ff00;
+		}
+
+		.btn-green:active {
+			background: #00bb00;
+		}")
+(TagEndOpen -> "</")
+(TagName -> "style")
+(TagClose -> ">")
+(TagEndOpen -> "</")
+(TagName -> "head")
+(TagClose -> ">")
+(TagName -> "body")
+(TagClose -> ">")
+(TagName -> "div")
+(AttributeName -> "class")
+(EqualSign -> "=")
+(AttributeValue -> ""container"")
+(TagClose -> ">")
+(TagName -> "div")
+(AttributeName -> "class")
+(EqualSign -> "=")
+(AttributeValue -> ""row"")
+(TagClose -> ">")
+(TagName -> "span")
+(AttributeName -> "class")
+(EqualSign -> "=")
+(AttributeValue -> ""label"")
+(TagClose -> ">")
+(Text -> "Max Distance Change")
+(TagEndOpen -> "</")
+(TagName -> "span")
+(TagClose -> ">")
+(TagEndOpen -> "</")
+(TagName -> "div")
+(TagClose -> ">")
+(TagName -> "div")
+(AttributeName -> "class")
+(EqualSign -> "=")
+(AttributeValue -> ""row"")
+(TagClose -> ">")
+(TagName -> "span")
+(AttributeName -> "class")
+(EqualSign -> "=")
+(AttributeValue -> ""value"")
+(AttributeName -> "id")
+(EqualSign -> "=")
+(AttributeValue -> ""max-value"")
+(TagClose -> ">")
+(Text -> "Current:")
+(TagEndOpen -> "</")
+(TagName -> "span")
+(TagClose -> ">")
+(TagEndOpen -> "</")
+(TagName -> "div")
+(TagClose -> ">")
+(TagName -> "div")
+(AttributeName -> "class")
+(EqualSign -> "=")
+(AttributeValue -> ""row"")
+(TagClose -> ">")
+(TagName -> "button")
+(AttributeName -> "class")
+(EqualSign -> "=")
+(AttributeValue -> ""btn-green"")
+(AttributeName -> "aria-label")
+(EqualSign -> "=")
+(AttributeValue -> ""increase max distance"")
+(AttributeName -> "onclick")
+(EqualSign -> "=")
+(AttributeValue -> ""handleClick('right', true)"")
+(TagClose -> ">")
+(Text -> "+")
+(TagEndOpen -> "</")
+(TagName -> "button")
+(TagClose -> ">")
+(TagName -> "button")
+(AttributeName -> "class")
+(EqualSign -> "=")
+(AttributeValue -> ""btn-red"")
+(AttributeName -> "aria-label")
+(EqualSign -> "=")
+(AttributeValue -> ""decrease max distance"")
+(AttributeName -> "onclick")
+(EqualSign -> "=")
+(AttributeValue -> ""handleClick('right', false)"")
+(TagClose -> ">")
+(Text -> "-")
+(TagEndOpen -> "</")
+(TagName -> "button")
+(TagClose -> ">")
+(TagEndOpen -> "</")
+(TagName -> "div")
+(TagClose -> ">")
+(TagName -> "div")
+(AttributeName -> "class")
+(EqualSign -> "=")
+(AttributeValue -> ""row"")
+(TagClose -> ">")
+(TagName -> "span")
+(AttributeName -> "class")
+(EqualSign -> "=")
+(AttributeValue -> ""label"")
+(TagClose -> ">")
+(Text -> "Min Distance Change")
+(TagEndOpen -> "</")
+(TagName -> "span")
+(TagClose -> ">")
+(TagEndOpen -> "</")
+(TagName -> "div")
+(TagClose -> ">")
+(TagName -> "div")
+(AttributeName -> "class")
+(EqualSign -> "=")
+(AttributeValue -> ""row"")
+(TagClose -> ">")
+(TagName -> "span")
+(AttributeName -> "class")
+(EqualSign -> "=")
+(AttributeValue -> ""value"")
+(AttributeName -> "id")
+(EqualSign -> "=")
+(AttributeValue -> ""min-value"")
+(TagClose -> ">")
+(Text -> "Current:")
+(TagEndOpen -> "</")
+(TagName -> "span")
+(TagClose -> ">")
+(TagEndOpen -> "</")
+(TagName -> "div")
+(TagClose -> ">")
+(TagName -> "div")
+(AttributeName -> "class")
+(EqualSign -> "=")
+(AttributeValue -> ""row"")
+(TagClose -> ">")
+(TagName -> "button")
+(AttributeName -> "class")
+(EqualSign -> "=")
+(AttributeValue -> ""btn-green"")
+(AttributeName -> "aria-label")
+(EqualSign -> "=")
+(AttributeValue -> ""increase min distance"")
+(AttributeName -> "onclick")
+(EqualSign -> "=")
+(AttributeValue -> ""handleClick('left', true)"")
+(TagClose -> ">")
+(Text -> "+")
+(TagEndOpen -> "</")
+(TagName -> "button")
+(TagClose -> ">")
+(TagName -> "button")
+(AttributeName -> "class")
+(EqualSign -> "=")
+(AttributeValue -> ""btn-red"")
+(AttributeName -> "aria-label")
+(EqualSign -> "=")
+(AttributeValue -> ""decrease min distance"")
+(AttributeName -> "onclick")
+(EqualSign -> "=")
+(AttributeValue -> ""handleClick('left', false)"")
+(TagClose -> ">")
+(Text -> "-")
+(TagEndOpen -> "</")
+(TagName -> "button")
+(TagClose -> ">")
+(TagEndOpen -> "</")
+(TagName -> "div")
+(TagClose -> ">")
+(TagEndOpen -> "</")
+(TagName -> "div")
+(TagClose -> ">")
+(TagEndOpen -> "</")
+(TagName -> "body")
+(TagClose -> ">")
+(TagEndOpen -> "</")
+(TagName -> "html")
+(TagClose -> ">")
