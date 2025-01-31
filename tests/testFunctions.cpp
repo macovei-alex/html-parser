@@ -88,7 +88,6 @@ std::vector<hp::_private::Token> hp::test::_private::parseExpectContent(std::str
 		{ "TagEndOpen", TokenType::TagEndOpen },
 		{ "TagClose", TokenType::TagClose },
 		{ "TagName", TokenType::TagName },
-		{ "EqualSign", TokenType::EqualSign },
 		{ "AttributeName", TokenType::AttributeName },
 		{ "AttributeValue", TokenType::AttributeValue },
 		{ "Text", TokenType::Text },

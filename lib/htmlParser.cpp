@@ -36,7 +36,6 @@ const std::vector<hp::_private::TokenRegex> hp::_private::tokenRegexes = {
 	{ TokenType::WhiteSpace, "WhiteSpace", R"(\s)" },
 	{ TokenType::Unknown, "Unknown", R"(.)" },
 	{ TokenType::TagStartOpen, "TagStartOpen", R"(<)" },
-	{ TokenType::EqualSign, "EqualSign", R"(=)" },
 	{ TokenType::TagEndOpen, "TagEndOpen", R"(</)" },
 };
 
@@ -82,14 +81,12 @@ std::vector<hp::_private::Token> hp::_private::tokenize(const std::string& html)
 						xstd::trim(tokenValue.substr(1), " \t\n"sv));
 					break;
 				case TokenType::AttributeValue:
-					tokens.emplace_back(TokenType::EqualSign, "=");
 					tokens.emplace_back(TokenType::AttributeValue, tokenValue.substr(1));
 					break;
 				default:
 					tokens.emplace_back(tokenRegex.type, tokenValue);
 					break;
 				}
-
 				break;
 			}
 		}

@@ -13,7 +13,6 @@ namespace hp
 			TagEndOpen,
 			TagClose,
 			TagName,
-			EqualSign,
 			AttributeName,
 			AttributeValue,
 			Text,
