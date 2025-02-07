@@ -1,226 +1,226 @@
-(TagName -> "!DOCTYPE")
-(AttributeName -> "html")
-(TagClose -> ">")
-(TagName -> "html")
-(AttributeName -> "lang")
-(AttributeValue -> ""en"")
-(TagClose -> ">")
-(TagName -> "head")
-(TagClose -> ">")
-(TagName -> "meta")
-(AttributeName -> "charset")
-(AttributeValue -> ""UTF-8"")
-(TagClose -> "/>")
-(TagName -> "meta")
-(AttributeName -> "name")
-(AttributeValue -> ""viewport"")
-(AttributeName -> "content")
-(AttributeValue -> ""width=device-width, initial-scale=1.0"")
-(TagClose -> "/>")
-(TagName -> "title")
-(TagClose -> ">")
-(Text -> "Document")
-(TagEndOpen -> "</")
-(TagName -> "title")
-(TagClose -> ">")
-(TagName -> "style")
-(TagClose -> ">")
-(Text -> "body {
-			margin: 0;
-			font-family: Arial, sans-serif;
-			font-weight: 900;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 100vh;
-		}
+(TagName:2:1:2 -> "!DOCTYPE")
+(AttributeName:11:1:11 -> "html")
+(TagClose:15:1:15 -> ">")
+(TagName:18:2:2 -> "html")
+(AttributeName:23:2:7 -> "lang")
+(AttributeValue:28:2:12 -> ""en"")
+(TagClose:32:2:16 -> ">")
+(TagName:35:3:2 -> "head")
+(TagClose:39:3:6 -> ">")
+(TagName:44:4:4 -> "meta")
+(AttributeName:49:4:9 -> "charset")
+(AttributeValue:57:4:17 -> ""UTF-8"")
+(TagClose:65:4:25 -> "/>")
+(TagName:71:5:4 -> "meta")
+(AttributeName:76:5:9 -> "name")
+(AttributeValue:81:5:14 -> ""viewport"")
+(AttributeName:92:5:25 -> "content")
+(AttributeValue:100:5:33 -> ""width=device-width, initial-scale=1.0"")
+(TagClose:140:5:73 -> "/>")
+(TagName:146:6:4 -> "title")
+(TagClose:151:6:9 -> ">")
+(Text:152:6:10 -> "Document")
+(TagEndOpen:160:6:18 -> "</")
+(TagName:162:6:20 -> "title")
+(TagClose:167:6:25 -> ">")
+(TagName:173:8:4 -> "style")
+(TagClose:178:8:9 -> ">")
+(Text:184:9:5 -> "body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
 
-		.container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			gap: 20px;
-		}
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
 
-		.row {
-			display: flex;
-			gap: 10px;
-			align-items: center;
-		}
+    .row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
 
-		.label {
-			font-size: 1.5rem;
-		}
+    .label {
+      font-size: 1.5rem;
+    }
 
-		button {
-			width: 200px;
-			height: 200px;
-			font-size: 7rem;
-			border-radius: 8px;
-			cursor: pointer;
-			transition: background-color 0.3s ease;
-		}
+    button {
+      width: 200px;
+      height: 200px;
+      font-size: 7rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-		.btn-red {
-			background: #ff0000;
-		}
+    .btn-red {
+      background: #ff0000;
+    }
 
-		.btn-red:active {
-			background: #bb0000;
-		}
+    .btn-red:active {
+      background: #bb0000;
+    }
 
-		.btn-green {
-			background: #00ff00;
-		}
+    .btn-green {
+      background: #00ff00;
+    }
 
-		.btn-green:active {
-			background: #00bb00;
-		}")
-(TagEndOpen -> "</")
-(TagName -> "style")
-(TagClose -> ">")
-(TagEndOpen -> "</")
-(TagName -> "head")
-(TagClose -> ">")
-(TagName -> "body")
-(TagClose -> ">")
-(TagName -> "div")
-(AttributeName -> "class")
-(AttributeValue -> ""container"")
-(TagClose -> ">")
-(TagName -> "div")
-(AttributeName -> "class")
-(AttributeValue -> ""row"")
-(TagClose -> ">")
-(TagName -> "span")
-(AttributeName -> "class")
-(AttributeValue -> ""label"")
-(TagClose -> ">")
-(Text -> "Max Distance Change")
-(TagEndOpen -> "</")
-(TagName -> "span")
-(TagClose -> ">")
-(TagEndOpen -> "</")
-(TagName -> "div")
-(TagClose -> ">")
-(TagName -> "div")
-(AttributeName -> "class")
-(AttributeValue -> ""row"")
-(TagClose -> ">")
-(TagName -> "span")
-(AttributeName -> "class")
-(AttributeValue -> ""value"")
-(AttributeName -> "id")
-(AttributeValue -> ""max-value"")
-(TagClose -> ">")
-(Text -> "Current:")
-(TagEndOpen -> "</")
-(TagName -> "span")
-(TagClose -> ">")
-(TagEndOpen -> "</")
-(TagName -> "div")
-(TagClose -> ">")
-(TagName -> "div")
-(AttributeName -> "class")
-(AttributeValue -> ""row"")
-(TagClose -> ">")
-(TagName -> "button")
-(AttributeName -> "class")
-(AttributeValue -> ""btn-green"")
-(AttributeName -> "aria-label")
-(AttributeValue -> ""increase max distance"")
-(AttributeName -> "onclick")
-(AttributeValue -> ""handleClick('right', true)"")
-(TagClose -> ">")
-(Text -> "+")
-(TagEndOpen -> "</")
-(TagName -> "button")
-(TagClose -> ">")
-(TagName -> "button")
-(AttributeName -> "class")
-(AttributeValue -> ""btn-red"")
-(AttributeName -> "aria-label")
-(AttributeValue -> ""decrease max distance"")
-(AttributeName -> "onclick")
-(AttributeValue -> ""handleClick('right', false)"")
-(TagClose -> ">")
-(Text -> "-")
-(TagEndOpen -> "</")
-(TagName -> "button")
-(TagClose -> ">")
-(TagEndOpen -> "</")
-(TagName -> "div")
-(TagClose -> ">")
-(TagName -> "div")
-(AttributeName -> "class")
-(AttributeValue -> ""row"")
-(TagClose -> ">")
-(TagName -> "span")
-(AttributeName -> "class")
-(AttributeValue -> ""label"")
-(TagClose -> ">")
-(Text -> "Min Distance Change")
-(TagEndOpen -> "</")
-(TagName -> "span")
-(TagClose -> ">")
-(TagEndOpen -> "</")
-(TagName -> "div")
-(TagClose -> ">")
-(TagName -> "div")
-(AttributeName -> "class")
-(AttributeValue -> ""row"")
-(TagClose -> ">")
-(TagName -> "span")
-(AttributeName -> "class")
-(AttributeValue -> ""value"")
-(AttributeName -> "id")
-(AttributeValue -> ""min-value"")
-(TagClose -> ">")
-(Text -> "Current:")
-(TagEndOpen -> "</")
-(TagName -> "span")
-(TagClose -> ">")
-(TagEndOpen -> "</")
-(TagName -> "div")
-(TagClose -> ">")
-(TagName -> "div")
-(AttributeName -> "class")
-(AttributeValue -> ""row"")
-(TagClose -> ">")
-(TagName -> "button")
-(AttributeName -> "class")
-(AttributeValue -> ""btn-green"")
-(AttributeName -> "aria-label")
-(AttributeValue -> ""increase min distance"")
-(AttributeName -> "onclick")
-(AttributeValue -> ""handleClick('left', true)"")
-(TagClose -> ">")
-(Text -> "+")
-(TagEndOpen -> "</")
-(TagName -> "button")
-(TagClose -> ">")
-(TagName -> "button")
-(AttributeName -> "class")
-(AttributeValue -> ""btn-red"")
-(AttributeName -> "aria-label")
-(AttributeValue -> ""decrease min distance"")
-(AttributeName -> "onclick")
-(AttributeValue -> ""handleClick('left', false)"")
-(TagClose -> ">")
-(Text -> "-")
-(TagEndOpen -> "</")
-(TagName -> "button")
-(TagClose -> ">")
-(TagEndOpen -> "</")
-(TagName -> "div")
-(TagClose -> ">")
-(TagEndOpen -> "</")
-(TagName -> "div")
-(TagClose -> ">")
-(TagEndOpen -> "</")
-(TagName -> "body")
-(TagClose -> ">")
-(TagEndOpen -> "</")
-(TagName -> "html")
-(TagClose -> ">")
+    .btn-green:active {
+      background: #00bb00;
+    }")
+(TagEndOpen:1048:61:3 -> "</")
+(TagName:1050:61:5 -> "style")
+(TagClose:1055:61:10 -> ">")
+(TagEndOpen:1057:62:1 -> "</")
+(TagName:1059:62:3 -> "head")
+(TagClose:1063:62:7 -> ">")
+(TagName:1066:63:2 -> "body")
+(TagClose:1070:63:6 -> ">")
+(TagName:1075:64:4 -> "div")
+(AttributeName:1079:64:8 -> "class")
+(AttributeValue:1085:64:14 -> ""container"")
+(TagClose:1096:64:25 -> ">")
+(TagName:1136:66:6 -> "div")
+(AttributeName:1140:66:10 -> "class")
+(AttributeValue:1146:66:16 -> ""row"")
+(TagClose:1151:66:21 -> ">")
+(TagName:1160:67:8 -> "span")
+(AttributeName:1165:67:13 -> "class")
+(AttributeValue:1171:67:19 -> ""label"")
+(TagClose:1178:67:26 -> ">")
+(Text:1179:67:27 -> "Max Distance Change")
+(TagEndOpen:1198:67:46 -> "</")
+(TagName:1200:67:48 -> "span")
+(TagClose:1204:67:52 -> ">")
+(TagEndOpen:1210:68:5 -> "</")
+(TagName:1212:68:7 -> "div")
+(TagClose:1215:68:10 -> ">")
+(TagName:1222:69:6 -> "div")
+(AttributeName:1226:69:10 -> "class")
+(AttributeValue:1232:69:16 -> ""row"")
+(TagClose:1237:69:21 -> ">")
+(TagName:1246:70:8 -> "span")
+(AttributeName:1251:70:13 -> "class")
+(AttributeValue:1257:70:19 -> ""value"")
+(AttributeName:1265:70:27 -> "id")
+(AttributeValue:1268:70:30 -> ""max-value"")
+(TagClose:1279:70:41 -> ">")
+(Text:1280:70:42 -> "Current:")
+(TagEndOpen:1289:70:51 -> "</")
+(TagName:1291:70:53 -> "span")
+(TagClose:1295:70:57 -> ">")
+(TagEndOpen:1301:71:5 -> "</")
+(TagName:1303:71:7 -> "div")
+(TagClose:1306:71:10 -> ">")
+(TagName:1313:72:6 -> "div")
+(AttributeName:1317:72:10 -> "class")
+(AttributeValue:1323:72:16 -> ""row"")
+(TagClose:1328:72:21 -> ">")
+(TagName:1337:73:8 -> "button")
+(AttributeName:1344:73:15 -> "class")
+(AttributeValue:1350:73:21 -> ""btn-green"")
+(AttributeName:1362:73:33 -> "aria-label")
+(AttributeValue:1373:73:44 -> ""increase max distance"")
+(AttributeName:1397:73:68 -> "onclick")
+(AttributeValue:1405:73:76 -> ""handleClick('right', true)"")
+(TagClose:1433:73:104 -> ">")
+(Text:1443:74:9 -> "+")
+(TagEndOpen:1451:75:7 -> "</")
+(TagName:1453:75:9 -> "button")
+(TagClose:1459:75:15 -> ">")
+(TagName:1468:76:8 -> "button")
+(AttributeName:1475:76:15 -> "class")
+(AttributeValue:1481:76:21 -> ""btn-red"")
+(AttributeName:1491:76:31 -> "aria-label")
+(AttributeValue:1502:76:42 -> ""decrease max distance"")
+(AttributeName:1526:76:66 -> "onclick")
+(AttributeValue:1534:76:74 -> ""handleClick('right', false)"")
+(TagClose:1563:76:103 -> ">")
+(Text:1573:77:9 -> "-")
+(TagEndOpen:1581:78:7 -> "</")
+(TagName:1583:78:9 -> "button")
+(TagClose:1589:78:15 -> ">")
+(TagEndOpen:1595:79:5 -> "</")
+(TagName:1597:79:7 -> "div")
+(TagClose:1600:79:10 -> ">")
+(TagName:1641:82:6 -> "div")
+(AttributeName:1645:82:10 -> "class")
+(AttributeValue:1651:82:16 -> ""row"")
+(TagClose:1656:82:21 -> ">")
+(TagName:1665:83:8 -> "span")
+(AttributeName:1670:83:13 -> "class")
+(AttributeValue:1676:83:19 -> ""label"")
+(TagClose:1683:83:26 -> ">")
+(Text:1684:83:27 -> "Min Distance Change")
+(TagEndOpen:1703:83:46 -> "</")
+(TagName:1705:83:48 -> "span")
+(TagClose:1709:83:52 -> ">")
+(TagEndOpen:1715:84:5 -> "</")
+(TagName:1717:84:7 -> "div")
+(TagClose:1720:84:10 -> ">")
+(TagName:1727:85:6 -> "div")
+(AttributeName:1731:85:10 -> "class")
+(AttributeValue:1737:85:16 -> ""row"")
+(TagClose:1742:85:21 -> ">")
+(TagName:1751:86:8 -> "span")
+(AttributeName:1756:86:13 -> "class")
+(AttributeValue:1762:86:19 -> ""value"")
+(AttributeName:1770:86:27 -> "id")
+(AttributeValue:1773:86:30 -> ""min-value"")
+(TagClose:1784:86:41 -> ">")
+(Text:1785:86:42 -> "Current:")
+(TagEndOpen:1794:86:51 -> "</")
+(TagName:1796:86:53 -> "span")
+(TagClose:1800:86:57 -> ">")
+(TagEndOpen:1806:87:5 -> "</")
+(TagName:1808:87:7 -> "div")
+(TagClose:1811:87:10 -> ">")
+(TagName:1818:88:6 -> "div")
+(AttributeName:1822:88:10 -> "class")
+(AttributeValue:1828:88:16 -> ""row"")
+(TagClose:1833:88:21 -> ">")
+(TagName:1842:89:8 -> "button")
+(AttributeName:1849:89:15 -> "class")
+(AttributeValue:1855:89:21 -> ""btn-green"")
+(AttributeName:1867:89:33 -> "aria-label")
+(AttributeValue:1878:89:44 -> ""increase min distance"")
+(AttributeName:1902:89:68 -> "onclick")
+(AttributeValue:1910:89:76 -> ""handleClick('left', true)"")
+(TagClose:1937:89:103 -> ">")
+(Text:1947:90:9 -> "+")
+(TagEndOpen:1955:91:7 -> "</")
+(TagName:1957:91:9 -> "button")
+(TagClose:1963:91:15 -> ">")
+(TagName:1972:92:8 -> "button")
+(AttributeName:1979:92:15 -> "class")
+(AttributeValue:1985:92:21 -> ""btn-red"")
+(AttributeName:1995:92:31 -> "aria-label")
+(AttributeValue:2006:92:42 -> ""decrease min distance"")
+(AttributeName:2030:92:66 -> "onclick")
+(AttributeValue:2038:92:74 -> ""handleClick('left', false)"")
+(TagClose:2066:92:102 -> ">")
+(Text:2076:93:9 -> "-")
+(TagEndOpen:2084:94:7 -> "</")
+(TagName:2086:94:9 -> "button")
+(TagClose:2092:94:15 -> ">")
+(TagEndOpen:2098:95:5 -> "</")
+(TagName:2100:95:7 -> "div")
+(TagClose:2103:95:10 -> ">")
+(TagEndOpen:2107:96:3 -> "</")
+(TagName:2109:96:5 -> "div")
+(TagClose:2112:96:8 -> ">")
+(TagEndOpen:2114:97:1 -> "</")
+(TagName:2116:97:3 -> "body")
+(TagClose:2120:97:7 -> ">")
+(TagEndOpen:2122:98:1 -> "</")
+(TagName:2124:98:3 -> "html")
+(TagClose:2128:98:7 -> ">")

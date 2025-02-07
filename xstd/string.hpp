@@ -48,6 +48,23 @@ namespace xstd
 	}
 
 
+	/// @brief Removes leading and trailing characters from a string.
+	/// @param str - The string to trim.
+	/// @param chars - The set of the characters to trim.
+	/// @tparam T - The character type to used.
+	/// @return The trimmed string.
+	template<class T>
+	[[nodiscard]] string<T> trim(const string<T>& str, const T* chars) noexcept
+	{
+		size_t first = str.find_first_not_of(chars);
+		if (first == string<T>::npos) {
+			return string<T>();
+		}
+		size_t last = str.find_last_not_of(chars);
+		return str.substr(first, (last - first + 1));
+	}
+
+
 	/// @brief Remove leading characters from a string.
 	/// @param str - The string to trim.
 	/// @param chars - The set of the characters to trim.

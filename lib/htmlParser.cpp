@@ -1,21 +1,21 @@
 #include "htmlParser.hpp"
 
-#include "Token.hpp"
-
 #include "xstd/string.hpp"
 
 #include <iostream>
 #include <format>
 
 
-using namespace std::literals;
-
-
 std::unique_ptr<hp::DocumentNode> hp::parseHtml(const std::string& html) {
 	auto tokens = _private::tokenize(html);
 
 	for (const auto& token : tokens) {
-		std::cout << '(' << _private::getTokenName(token.type) << " -> \"" << token.value << "\")\n";
+		std::cout << std::format("({}:{}:{}:{} -> \"{}\")\n",
+			_private::getTokenName(token.type),
+			token.contentPos,
+			token.line,
+			token.linePos,
+			token.value);
 	}
 
 	auto root = std::make_unique<DocumentNode>();
@@ -58,6 +58,10 @@ std::vector<hp::_private::Token> hp::_private::tokenize(const std::string& html)
 	auto begin = std::sregex_iterator(html.begin(), html.end(), regex);
 	auto end = std::sregex_iterator();
 
+	size_t contentPos = 1;
+	size_t line = 1;
+	size_t linePos = 1;
+
 	for (auto it = begin; it != end; ++it) {
 		std::string tokenValue = it->str();
 		for (const auto& tokenRegex : tokenRegexes) {
@@ -65,26 +69,49 @@ std::vector<hp::_private::Token> hp::_private::tokenize(const std::string& html)
 				switch (tokenRegex.type) {
 				case TokenType::WhiteSpace:
 				case TokenType::Comment:
+					adjustTokenPositions(tokenValue, contentPos, line, linePos);
 					break;
-				case TokenType::TagName:
+				case TokenType::TagName: {
 					if (tokenValue[1] == '/') {
-						tokens.emplace_back(TokenType::TagEndOpen, "</");
-						tokens.emplace_back(TokenType::TagName, tokenValue.substr(2));
+						tokens.emplace_back(TokenType::TagEndOpen, "</", contentPos, line, linePos);
+						tokens.emplace_back(TokenType::TagName, tokenValue.substr(2), contentPos + 2, line, linePos + 2);
 					}
 					else {
-						tokens.emplace_back(TokenType::TagName, tokenValue.substr(1));
+						tokens.emplace_back(TokenType::TagName, tokenValue.substr(1), contentPos + 1, line, linePos + 1);
 					}
+					adjustTokenPositions(tokenValue, contentPos, line, linePos);
 					break;
-				case TokenType::Text:
-					tokens.emplace_back(TokenType::TagClose, ">");
-					tokens.emplace_back(TokenType::Text,
-						xstd::trim(tokenValue.substr(1), " \t\n"sv));
+				}
+				case TokenType::Text: {
+					tokens.emplace_back(TokenType::TagClose, ">", contentPos, line, linePos);
+					size_t tempContentPos = contentPos + 1;
+					size_t tempLine = line;
+					size_t tempLinePos = linePos + 1;
+					for (size_t i = 1; i < tokenValue.size(); ++i) {
+						if (tokenValue[i] == '\n') {
+							++tempContentPos;
+							++tempLine;
+							tempLinePos = 1;
+						}
+						else if (tokenValue[i] != ' ' && tokenValue[i] != '\t') {
+							break;
+						}
+						else {
+							++tempContentPos;
+							++tempLinePos;
+						}
+					}
+					tokens.emplace_back(TokenType::Text, xstd::trim(tokenValue.substr(1), " \t\n"), tempContentPos, tempLine, tempLinePos);
+					adjustTokenPositions(tokenValue, contentPos, line, linePos);
 					break;
+				}
 				case TokenType::AttributeValue:
-					tokens.emplace_back(TokenType::AttributeValue, tokenValue.substr(1));
+					tokens.emplace_back(TokenType::AttributeValue, tokenValue.substr(1), contentPos + 1, line, linePos + 1);
+					adjustTokenPositions(tokenValue, contentPos, line, linePos);
 					break;
 				default:
-					tokens.emplace_back(tokenRegex.type, tokenValue);
+					tokens.emplace_back(tokenRegex.type, tokenValue, contentPos, line, linePos);
+					adjustTokenPositions(tokenValue, contentPos, line, linePos);
 					break;
 				}
 				break;
@@ -93,4 +120,15 @@ std::vector<hp::_private::Token> hp::_private::tokenize(const std::string& html)
 	}
 
 	return tokens;
+}
+
+void hp::_private::adjustTokenPositions(std::string_view tokenStr, size_t& contentPos, size_t& line, size_t& linePos) {
+	contentPos += tokenStr.size();
+	for (char c : tokenStr) {
+		++linePos;
+		if (c == '\n') {
+			++line;
+			linePos = 1;
+		}
+	}
 }

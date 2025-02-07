@@ -20,7 +20,12 @@
 std::ostream& operator<<(std::ostream& os, const std::vector<hp::_private::Token>& tokens) {
 	os << '[';
 	for (const auto& token : tokens) {
-		os << '(' << hp::_private::getTokenName(token.type) << " -> " << token.value << "\n";
+		os << std::format("({}:{}:{}:{} -> \"{}\")\n",
+			getTokenName(token.type),
+			token.contentPos,
+			token.line,
+			token.linePos,
+			token.value);
 	}
 	os << ']';
 	return os;
@@ -72,9 +77,19 @@ void hp::test::testTokenize(int testId, std::ostream& os) {
 			<< "  Expected:\n" << expectedTokens << "\n"
 			<< "  Actual:\n" << tokens << "\n" HP_TEST_COLOR_RESET;
 
-		std::cerr << "First difference at position: " << missmatchPos << '\n';
-		std::cout << "((" << tokens[missmatchPos].value << "))\n";
-		std::cout << "((" << expectedTokens[missmatchPos].value << "))\n";
+		std::cerr << "First difference at index: " << missmatchPos << '\n';
+		std::cout << std::format("(({}:{}:{}:{} -> {}))\n",
+			getTokenName(tokens[missmatchPos].type),
+			tokens[missmatchPos].contentPos,
+			tokens[missmatchPos].line,
+			tokens[missmatchPos].linePos,
+			tokens[missmatchPos].value);
+		std::cout << std::format("(({}:{}:{}:{} -> {}))\n",
+			getTokenName(expectedTokens[missmatchPos].type),
+			expectedTokens[missmatchPos].contentPos,
+			expectedTokens[missmatchPos].line,
+			expectedTokens[missmatchPos].linePos,
+			expectedTokens[missmatchPos].value);
 	}
 }
 
@@ -109,11 +124,35 @@ std::vector<hp::_private::Token> hp::test::_private::parseExpectContent(std::str
 		++pos;
 
 		size_t aux = pos;
-		while (content[pos] != ' ') {
+		while (content[pos] != ':') {
 			++pos;
 		}
 
 		std::string tokenName = content.substr(aux, pos - aux);
+
+		++pos;
+		aux = pos;
+		while (content[pos] != ':') {
+			++pos;
+		}
+		std::string contentPos = content.substr(aux, pos - aux);
+		size_t contentPosVal = std::stoul(contentPos);
+		++pos;
+
+		aux = pos;
+		while (content[pos] != ':') {
+			++pos;
+		}
+		std::string line = content.substr(aux, pos - aux);
+		size_t lineVal = std::stoul(line);
+		++pos;
+
+		aux = pos;
+		while (content[pos] != ' ') {
+			++pos;
+		}
+		std::string linePos = content.substr(aux, pos - aux);
+		size_t linePosVal = std::stoul(linePos);
 
 		if (content.substr(pos, 4) != " -> ") {
 			throw std::runtime_error(std::format("Expected ( \" -> \" ) at position ( {} ), but got ( {} ) instead", pos, content.substr(pos, 4)));
@@ -131,7 +170,7 @@ std::vector<hp::_private::Token> hp::test::_private::parseExpectContent(std::str
 
 		auto it = tokenTypeMap.find(tokenName);
 		if (it != tokenTypeMap.end()) {
-			tokens.emplace_back(tokenTypeMap.at(tokenName), std::move(tokenValue));
+			tokens.emplace_back(tokenTypeMap.at(tokenName), std::move(tokenValue), contentPosVal, lineVal, linePosVal);
 		}
 		else {
 			throw std::runtime_error(std::format("Invalid token type name: ( {} )", tokenName));
